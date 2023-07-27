@@ -34,7 +34,7 @@ export class User implements IUser {
   role: UserRole;
 
   @OneToMany(() => Blog, (blog) => blog.user, { nullable: true, eager: true, cascade: true })
-  @Field((type) => [Blog], { nullable: true })
+  @Field(() => [Blog], { nullable: true })
   blogs?: Blog[];
 
   @CreateDateColumn()
