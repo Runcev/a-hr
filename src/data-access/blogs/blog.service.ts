@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Blog, BlogCreateInput, BlogUpdateInput, FetchBlogsArgs } from './blog.entity';
+import { Blog } from './blog.entity';
 import { User } from '../users/user.entity';
 import { UserService } from '../users/user.service';
+import { BlogCreateInput, BlogUpdateInput, FetchBlogsArgs } from './blog.gql.input';
 
 @Injectable()
 export class BlogService {

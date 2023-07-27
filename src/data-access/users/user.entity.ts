@@ -6,8 +6,8 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { ArgsType, Field, InputType, Int, ObjectType, registerEnumType } from '@nestjs/graphql';
-import { IUser, IUserCreateDTO, IUserUpdateDTO, UserRole } from './user.types';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { IUser, UserRole } from './user.types';
 import { Blog } from '../blogs/blog.entity';
 
 @Entity('users')
@@ -44,28 +44,4 @@ export class User implements IUser {
   @UpdateDateColumn()
   @Field()
   updatedAt: Date;
-}
-
-@InputType()
-@ArgsType()
-export class UserCreateInput implements IUserCreateDTO {
-  @Field({ nullable: false })
-  name: string;
-  @Field({ nullable: false })
-  surname: string;
-  @Field(() => UserRole)
-  role: UserRole;
-}
-
-@InputType()
-@ArgsType()
-export class UserUpdateInput implements IUserUpdateDTO {
-  @Field(() => Int, { nullable: false })
-  id: number;
-  @Field({ nullable: true })
-  name: string;
-  @Field({ nullable: true })
-  surname: string;
-  @Field(() => UserRole, { nullable: true })
-  role: UserRole;
 }

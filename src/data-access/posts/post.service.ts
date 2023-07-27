@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { FetchPostsArgs, Post, PostCreateInput, PostUpdateInput } from './post.entity';
+import { Post } from './post.entity';
 import { BlogService } from '../blogs/blog.service';
 import { Blog } from '../blogs/blog.entity';
+import { FetchPostsArgs, PostCreateInput, PostUpdateInput } from './post.gql.input';
 
 @Injectable()
 export class PostService {
@@ -14,7 +15,7 @@ export class PostService {
   ) {}
 
   public async findAll(args: FetchPostsArgs): Promise<Post[]> {
-    const { skip, take} = args;
+    const { skip, take } = args;
     return this.postRepository.find({
       skip,
       take,

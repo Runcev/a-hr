@@ -1,9 +1,10 @@
 import { Args, Int, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
 import { GraphQLBoolean } from 'graphql/type';
-import { FetchPostsArgs, Post, PostCreateInput, PostUpdateInput } from './post.entity';
+import { Post } from './post.entity';
 import { PostService } from './post.service';
 import { Blog } from '../blogs/blog.entity';
+import { FetchPostsArgs, PostCreateInput, PostUpdateInput } from './post.gql.input';
 
 @Resolver(() => Post)
 export class PostResolver {

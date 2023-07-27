@@ -1,9 +1,10 @@
 import { Args, Int, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { forwardRef, Inject } from '@nestjs/common';
 import { GraphQLBoolean } from 'graphql/type';
-import { Blog, BlogCreateInput, BlogUpdateInput, FetchBlogsArgs } from './blog.entity';
+import { Blog } from './blog.entity';
 import { BlogService } from './blog.service';
 import { User } from '../users/user.entity';
+import { BlogCreateInput, BlogUpdateInput, FetchBlogsArgs } from './blog.gql.input';
 
 @Resolver(() => Blog)
 export class BlogResolver {

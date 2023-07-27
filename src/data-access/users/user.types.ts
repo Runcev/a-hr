@@ -1,6 +1,5 @@
 import { Blog } from '../blogs/blog.entity';
 import { registerEnumType } from '@nestjs/graphql';
-//import UserRole from './user.enum';
 
 export interface IUser {
   id: number;
