@@ -38,6 +38,7 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.0",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",

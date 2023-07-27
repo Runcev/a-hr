@@ -14,8 +14,7 @@ export class PostService {
   ) {}
 
   public async findAll(args: FetchPostsArgs): Promise<Post[]> {
-    const { skip, take, orderBy } = args;
-    console.log(orderBy);
+    const { skip, take} = args;
     return this.postRepository.find({
       skip,
       take,
